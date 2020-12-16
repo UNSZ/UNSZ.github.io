@@ -1,28 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127715558-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>____Whitehackers Telegram</title><meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"><link href="./help/favicon.ico" rel="shortcut icon" type="image/x-icon"><link href="./help/favicon.ico" rel="icon" type="image/x-icon"><link href="./help/e4bf05.css" rel="stylesheet"><meta content="Дистанционно и профессионально уничтожаю компьютерные проблемы!" name="description"><meta content="переадресация в телеграм, переадресация телеграм, переадресация в telegram, переадресация telegram, редирект в телеграм, редирект телеграм, редирект в telegram, редирект telegram, сервис для переадресации в телеграм, сервис для переадресации в telegram, сервис для редиректа в телеграм, сервис для редиректа в telegram, сократитель ссылок телеграм, сократитель ссылок telegram, получить ссылку телеграм, получить ссылку telegram, обход блокировки телеграм, обход блокировки telegram, telegrun, телегран, телеклик, t.me, т.ми" name="keywords"><meta content="ru_RU" property="og:locale"><meta content="Если у вас нет друга или знакомого серьезно подкованного в компьютерах вы в самой первой группе риска поверьте" property="og:title"><meta content="Whitehackers" property="og:description"><meta content="./help/7.jpg" property="og:image"><link rel="stylesheet" media="screen" href="./help/e4bf05.css"><div class="form"></head>
-<body>
-<a class="logo"><div class="logo__image"><div class="logo__image-src"></div></div><div class="logo__text">Whitehackers</div></a>
+    gtag('config', 'UA-127715558-2');
+  </script>
 
-<div class="tme"><a class="tme__image" href="tg://resolve?domain=NESUSHESTVUET"><img class="tme__image-src" src="./help/7.jpg"></a>
-<div class="tme__title"><div class="tgme_page_title" dir="auto"><span dir="auto">NESUSHESTVUET</span></div></div>
+<style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      background-image: url(./bg.png);
+    }
+    .hidden {
+      display: none!important;
+    }
+    .footer {
+      padding: 20px 0;
+    }
+    .btn {
+      font-size: 12px;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+    .form-control {
+      border-radius: 0;
+    }
+    #convert-btn, #link {
+      background-color: #32afed;
+      border-color: #32afed;
+      color: #fff;
+    }
+    #inputUrl {
+      margin-bottom: 20px;
+    }
+    #convert-form {
+      width: 100%;
+    }
+    .title {
+      color: #0cc;
+      font-weight: normal;
+      font-size: 20px;
+    }
+    .line {
+      position: fixed;
+      height: 60px;
+      background: #32afed;
+      color: #fff;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .line:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
 
-<div class="tme__extra"><div class="tgme_page_extra">6 772 подписчика</div></div></div>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>Переадресация Telegram</title>
+</head>
+<body class="text-center d-flex flex-column">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCF2D9J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<div class="form-controls form-controls_no-create-link"><a class="form-controls__open" href="tg://resolve?domain=NESUSHESTVUET">Открыть в Telegram</a></div><div class="block-a"></div><div class="tg-install"><div class="tg-install__text">У вас еще нет Telegram? Установите сейчас!</div><div class="tg-install__links"><a class="tg-install__link tg-install__link_android" href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank"></a><a class="tg-install__link tg-install__link_apple" href="https://apps.apple.com/app/telegram-messenger/id686449807" target="_blank"></a></div></div>
+<div class="container d-flex justify-content-center align-items-center flex-grow-1 flex-column">
+    <form id="convert-form" class="hidden justify-content-center">
+      <div class="row">
+        <div class="col">
+          <h1 class="title">Сервис переадресации Telegram</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <input type="inputUrl" id="inputUrl" class="form-control" placeholder="t.me/.." required="" autofocus="">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <button class="btn btn-lg btn-primary btn-block" onclick="handleUrl()" id="convert-btn" type='button'>Получить адрес</button>
+        </div>
+      </div>
+                </form>
+    <div id="open-link" class="flex-column d-flex col justify-content-center align-items-center hidden">
+      <div class="row justify-content-center w-100">
+        <div class="col-md-5">
+          <a id="link" class="btn btn-lg btn-primary btn-block">Открыть</a>
+        </div>
+      </div>
+                </div>
+  </div>
+  <script>
+    var pageUrl = '/',
+      isIndex = ['/'].indexOf( pageUrl ) !== -1,
+      blockId = isIndex ? 'convert-form' : 'open-link',
+      block = document.getElementById( blockId ),
+      haveLine = document.querySelector( '.line' ) !== null,
+      haveBanners = document.querySelector( '.banner' ) !== null,
+      timeout = haveBanners || haveLine ? 5000 : 100,
+      inputUrl = document.getElementById('inputUrl');
 
+    block.classList.remove( 'hidden' );
 
-<div class="tg-install__text">_________________________________</div>
-<a class="rules" href="https://desktop.telegram.org" target="_blank">>Telegram для настольного ПК<</a>
-<span dir="auto">|</span>
-<a class="rules" class="tgme_page_extra" href="https://macos.telegram.org" target="_blank">>Telegram для macOS<</a>
-<div class="tg-install__text">_________________________________</div>
+    if (!isIndex) {
+      forward();
+    }
+    document.getElementById('convert-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+    });
+    inputUrl.addEventListener('keyup', function(e) {
+      if ( e.keyCode !== 13 ) {
+        return;
+      }
+      e.preventDefault();
+      handleUrl();
+    });
 
-<div class="tme__extra"><div class="tgme_page_extra"> &nbsp; </div>
+    function handleUrl(){
+      function setValue(val) {
+          inputUrl.value = val;
+      }
+      var value = inputUrl.value;
+      if (value.match(/^[a-zA-Z\?=\d_-]+$/)) {
+        return setValue( "https://" + window.location.host + "/" + value );
+      }
+      value = value
+        .replace(/.*t\.me/,"https://"+window.location.host)
+        .replace("http://","https://")
+        .replace("@","https://"+window.location.host+"/");
 
-<a class="logo"><div class="logo__text">Дистанционно и профессионально уничтожаю компьютерные проблемы!</div></a>
-<a class="logo"><div class="logo__text">ВИРУСЫ, БАНЕРЫ ВЫМОГАТЕЛИ, БЛОКИРОВЩИКИ WINDOWS.</div></a>
-<a class="logo"><div class="logo__text">Тонкая настройка операционных систем на базе WINDOWS и Android.</div></a>
-<a class="logo"><div class="logo__text">По желанию обучу серьезной безопасности в сети.. и не только</div></a>
+      setValue(value);
+    }
+    function getLocation(url) {
+      var link = document.createElement( 'a' );
+      link.href = url;
+      return link;
+    }
+    function forward() {
+      var location = getLocation(pageUrl),
+        info = location.pathname.split("/"),
+        str = '';
+      switch (info[1]) {
+        case "socks":
+          str = "tg://socks" + location.search;
+          break;
+        case "joinchat":
+          str = "tg://join?invite=" + info[2];
+          break;
+        case "addstickers":
+          str = "tg://addstickers?set=" + info[2];
+          break;
+        case "proxy":
+          str = "tg://" + info[1] + location.search;
+          break;
+        default:
+          var domain = info[1];
+          str = "tg://resolve?domain=" + domain + location.search.replace("?start=", "&start=");
+          if (info[2]) {
+            str += "&post=" + info[2]
+          }
+      }
 
-</body></html>
+      document.getElementById("link").href = str;
+      setTimeout(function() {
+          window.location.replace(str);
+      }, timeout );
+    }
+  </script>
+</body>
+</html>
